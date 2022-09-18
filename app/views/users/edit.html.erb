@@ -4,24 +4,23 @@
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
         <h2>User info</h2>
-        <form enctype="multipart/form-data" action="/users/45457" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="a1QQiyrQItNFfn92IIYGZ-MZGW9VyykH4dv5UGOe6O15SFbeQNSEfid6Ijzg0OOvwaZA9BqNVt2VJ6BdhnMmrg" autocomplete="off">
+        <%= form_with model: @user do |f| %>
           <div class="form-group">
-            <label for="user_name">Name</label>
-            <input class="form-control name" type="text" value="eri" name="user[name]" id="user_name">
+            <%= f.label :user_name, "Name" %>
+            <%= f.text_field :user_name %>
           </div>
           <div class="form-group">
-            <label for="user_image">Image</label>
-            <input class="form-control-file user_image" accept="image/*" type="file" name="user[profile_image]" id="user_profile_image">
-            <%= f.file_field :image, accept: "image/*" %>
+            <%= f.label :user_profile_image, "Image" %>
+            <%= f.file_field :user_profile_image, accept: "image/*" %>
           </div>
           <div class="form-group">
-            <label for="user_introduction">Introduction</label>
-            <textarea class="form-control introduction" name="user[introduction]" id="user_introduction"></textarea>
+            <%= f.label :user_introduction, "Introduction" %>
+            <%= f.text_area :user_introduction %>
           </div>
           <div class="form-group">
-            <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+            <%= f.submit 'Update User'%>
           </div>
-        </form>  
+        <% end %>  
       </div>
     </div>
   </div>
