@@ -1,2 +1,27 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<main>
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		  <h1>Editing Book</h1>
+  		  <%= form_with model: @book do |f| %>
+    	  <form action="/books/34644" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="gq1LT1dPZcte61vdxF-vQ7SXov-qLnPIq9VC5q95UU579lJwerE1tj8dAfj_eeQG1CwTukHnfsOYl-yZ6SbqgA" autocomplete="off">
+          <div class="form-group">
+            <%= f.label :title, "Title" %>
+            <%= f.text_field :title %>
+          </div>
+          <div class="form-group">
+            <%= f.label :body, "Opinion" %>
+            <%= f.text_area :body %>
+          </div>
+          <div class="form-group">
+            <%= f.submit 'Update Book' %>
+          </div>
+        <% end %>
+        <%= link_to "Show", book_path(@book.id) %>
+  		  |
+  		  <%= link_to "Back", books_path %>
+      </div>
+    </div>
+  </div>
+</main>

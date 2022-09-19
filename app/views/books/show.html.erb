@@ -58,7 +58,7 @@
               </td>
               <td>
                 <% if @book.user == current_user %>
-                  <%= link_to "Edit", edit_book_path %>
+                  <%= link_to "Edit", edit_book_path(@book) %>
                 <% end %>
               </td>
               <td>
