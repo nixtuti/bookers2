@@ -30,8 +30,3 @@ body {
   text-align: left;
   background-color: #fff;
 }
-
-.navbar-expand-lg .navbar-collapse {
-  display: flex!important;
-}
-
