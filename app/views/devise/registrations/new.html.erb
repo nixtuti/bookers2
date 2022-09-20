@@ -5,17 +5,17 @@
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
         <h2>Sign up</h2>
 
-        <%= form_with model: @user, url: user_registration_path do |f| %>
+        <%= form_with model: @user, url: user_registration_path, id: "new-user", class: "new_user" do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
   
           <div class="field">
             <%= f.label :name %><br>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", :class => "name" %>
           </div>
   
           <div class="field">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autocomplete: "email" %>
+            <%= f.email_field :email, autocomplete: "email", :class => "email" %>
           </div>
 
           <div class="field">
@@ -23,16 +23,16 @@
             <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password" %>
+            <%= f.password_field :password, autocomplete: "new-password", :class => "passward" %>
           </div>
 
           <div class="field">
             <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "password_confirm"%>
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign up" %>
+            <%= f.submit "Sign up", class: "btn btn-sm btn-success" %>
           </div>
         <% end %>
 
