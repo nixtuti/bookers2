@@ -4,6 +4,18 @@
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
   		  <h1>Editing Book</h1>
+  		  <% if @book.errors.any? %>
+  		  <div id="error_explanation">
+  		    <h3>
+  		      <%= @book.errors.count %> errors prohibited this obj from being saved:
+  		    </h3>
+  		    <ul>
+  		      <% @book.errors.full_messages.each do |message| %>
+  		      <li><%= message %></li>
+  		      <% end %>
+  		    </ul>
+  		  </div>
+  		  <% end %>
   		  <%= form_with model: @book do |f| %>
     	  <form action="/books/34644" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="gq1LT1dPZcte61vdxF-vQ7SXov-qLnPIq9VC5q95UU579lJwerE1tj8dAfj_eeQG1CwTukHnfsOYl-yZ6SbqgA" autocomplete="off">
           <div class="form-group">
