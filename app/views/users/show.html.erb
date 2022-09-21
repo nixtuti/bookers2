@@ -1,5 +1,10 @@
 <main>
-  <p id="notice"></p>
+  <p id="notice">
+    <%= flash[:notice] %>
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, message, class: key %>
+    <% end %>
+  </p>
   <div class="container px-5 px-sm-0">
     <div class="row">
       <div class="col-md-3">
