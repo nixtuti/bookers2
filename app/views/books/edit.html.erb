@@ -17,7 +17,6 @@
   		  </div>
   		  <% end %>
   		  <%= form_with model: @book do |f| %>
-    	  <form action="/books/34644" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="gq1LT1dPZcte61vdxF-vQ7SXov-qLnPIq9VC5q95UU579lJwerE1tj8dAfj_eeQG1CwTukHnfsOYl-yZ6SbqgA" autocomplete="off">
           <div class="form-group">
             <%= f.label :title, "Title" %><br>
             <%= f.text_field :title, :class => "form-control book_title" %>
